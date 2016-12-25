@@ -5,12 +5,17 @@
 [![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
 [![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
 
-Note this project was cloned from the excelent project nJwt https://github.com/jwtk/njwt, 
+Note this project is a fork of the excelent project nJwt https://github.com/jwtk/njwt, 
 maintained by Stormpath http://www.stormpath.com.
 
 
-I have made some very small changes that allow easy creation of a key lookup.
-Key lookup example below.
+These are my imediate goals:
+
+1. Allow easy creation of a key lookup. Key lookup example below. (done)
+
+2.  Remove 'none' as an option for the signature.
+
+3. Make the default jti to be an ObjectId.
 
 jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
