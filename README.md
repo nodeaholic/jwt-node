@@ -1,6 +1,8 @@
 # jwt-node - JWTs for Node.js
 
-"Nin-Jot" /ˈnɪn.dʒɑt/
+Note this project was cloned from the excelent project nJwt https://github.com/jwtk/njwt.
+I have made some very small changes that allow easy creation of a key lookup.
+
 
 [![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
 [![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
