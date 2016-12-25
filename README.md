@@ -1,13 +1,13 @@
-# nJwt - JWTs for Node.js
+# jwt-node - JWTs for Node.js
 
 "Nin-Jot" /ˈnɪn.dʒɑt/
 
-[![NPM Version](https://img.shields.io/npm/v/njwt.svg?style=flat)](https://npmjs.org/package/njwt)
-[![NPM Downloads](https://img.shields.io/npm/dm/njwt.svg?style=flat)](https://npmjs.org/package/njwt)
-[![Build Status](https://img.shields.io/travis/jwtk/njwt.svg?style=flat)](https://travis-ci.org/jwtk/njwt)
-[![Coverage Status](https://coveralls.io/repos/jwtk/njwt/badge.svg?branch=master)](https://coveralls.io/r/jwtk/njwt?branch=master)
+[![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
+[![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
+[![Build Status](https://img.shields.io/travis/jwtk/jwt-node.svg?style=flat)](https://travis-ci.org/jwtk/jwt-node)
+[![Coverage Status](https://coveralls.io/repos/jwtk/jwt-node/badge.svg?branch=master)](https://coveralls.io/r/jwtk/jwt-node?branch=master)
 
-nJwt is the cleanest JSON Web Token (JWT) library for Node.js developers. nJwt
+jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
 that allows you to securely make and use JWTs in your applications without
 needing to read [rfc7519](http://www.rfc-editor.org/rfc/rfc7519.txt).
@@ -42,7 +42,7 @@ your signing key, and then use that key to sign a JWT with some claims that you
 provide:
 
 ````javascript
-var nJwt = require('njwt');
+var jwt-node = require('jwt-node');
 var secureRandom = require('secure-random');
 
 var signingKey = secureRandom(256, {type: 'Buffer'}); // Create a highly random byte array of 256 bytes
@@ -53,7 +53,7 @@ var claims = {
   scope: "self, admins"
 }
 
-var jwt = nJwt.create(claims,signingKey);
+var jwt = jwt-node.create(claims,signingKey);
 
 ````
 
@@ -130,7 +130,7 @@ This library does the following checks when you call the `verify` method:
 To verify a previously issued token, use the `verify` method.  You must give it
 the same signing key that you are using to create tokens:
 ````javascript
-nJwt.verify(token,signingKey,function(err,verifiedJwt){
+jwt-node.verify(token,signingKey,function(err,verifiedJwt){
   if(err){
     console.log(err); // Token has expired, has been tampered with, etc
   }else{
@@ -147,7 +147,7 @@ You can also use verify synchronously, in which case the errors will be thrown:
 
 ````javascript
 try{
-  verifiedJwt = nJwt.verify(token,signingKey);
+  verifiedJwt = jwt-node.verify(token,signingKey);
 }catch(e){
   console.log(e);
 }
@@ -159,10 +159,10 @@ If you want to change the algorithm from the default `HS256`, you can do so
 by passing it as a third argument to the `create` or `verify` methods:
 
 ````javascript
-var jwt = nJwt.create(claims,signingKey,'HS512');
+var jwt = jwt-node.create(claims,signingKey,'HS512');
 ````
 ````javascript
-nJwt.verify(token,signingKey, 'HS512');
+jwt-node.verify(token,signingKey, 'HS512');
 ````
 
 See the table below for a list of supported algorithms.  If using RSA key pairs,
@@ -183,10 +183,10 @@ examples create the same claims body:
 var claims = {
   scope: 'admins'
 }
-var jwt = nJwt.create(claims,secret);
+var jwt = jwt-node.create(claims,secret);
 ````
 ```javascript
-var jwt = nJwt.create({},secret);
+var jwt = jwt-node.create({},secret);
 jwt.body.scope = 'admins';
 ````
 
@@ -197,7 +197,7 @@ the `exp` claim by passing a `Date` object, or a millisecond value, to the
 `setExpiration` method:
 
 ```javascript
-var jwt = nJwt.create(claims,secret);
+var jwt = jwt-node.create(claims,secret);
 
 jwt.setExpiration(new Date('2015-07-01')); // A specific date
 jwt.setExpiration(new Date().getTime() + (60*60*1000)); // One hour from now
@@ -211,7 +211,7 @@ the `nbf` claim by passing a `Date` object, or a millisecond value, to the
 `setNotBefore` method:
 
 ```javascript
-var jwt = nJwt.create(claims,secret);
+var jwt = jwt-node.create(claims,secret);
 
 jwt.setNotbefore(new Date('2015-07-01')); // token is active from this date
 jwt.setNotbefore(new Date().getTime() + (60*60*1000)); // One hour from now
@@ -246,18 +246,18 @@ none | No digital signature or MAC value included
     var currentKey = 0
 
     // create a token
-    var token = new nJwt.Jwt(claims)
+    var token = new jwt-node.Jwt(claims)
       .setSigningAlgorithm('HS256')
       .setSigningKey(keys[currentKey].secret)
       .setSigningKeyId(keys[currentKey].kid)
       .compact();
 
     // Parse the tokent
-    var jwt = new nJwt.Parser().parse(token);
+    var jwt = new jwt-node.Parser().parse(token);
     // lookup the key
     var found = keys.find(k => k.kid === jwt.header.kid)
     // then verify
-    var verifier = new nJwt.Verifier()
+    var verifier = new jwt-node.Verifier()
       .setSigningAlgorithm('HS256')
       .setSigningKey(found.secret)
       .verify(token, function (err, res) {
