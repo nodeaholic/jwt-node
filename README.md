@@ -1,5 +1,10 @@
 # jwt-node - JWTs for Node.js
 
+[![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
+[![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
+[![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
+[![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
+
 Note this project was cloned from the excelent project nJwt https://github.com/jwtk/njwt, 
 maintained by Stormpath http://www.stormpath.com.
 
@@ -7,11 +12,6 @@ maintained by Stormpath http://www.stormpath.com.
 I have made some very small changes that allow easy creation of a key lookup.
 Key lookup example below.
 
-
-[![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
-[![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
-[![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
-[![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
 jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
 that allows you to securely make and use JWTs in your applications without
