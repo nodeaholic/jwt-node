@@ -2,6 +2,7 @@
 
 Note this project was cloned from the excelent project nJwt https://github.com/jkevlin/njwt.
 I have made some very small changes that allow easy creation of a key lookup.
+Key lookup example below.
 
 
 [![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
