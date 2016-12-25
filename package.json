@@ -1,6 +1,6 @@
 {
-  "name": "njwt",
-  "version": "0.3.2",
+  "name": "jwt-node",
+  "version": "0.1.0",
   "description": "JWT Library for Node.js",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jwtk/njwt"
+    "url": "https://github.com/jwtk/jwt-node"
   },
   "keywords": [
     "jwt"
@@ -19,9 +19,9 @@
   "author": "Stormpath, Inc.",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jwtk/njwt/issues"
+    "url": "https://github.com/jwtk/jwt-node/issues"
   },
-  "homepage": "https://github.com/jwtk/njwt",
+  "homepage": "https://github.com/jwtk/jwt-node",
   "dependencies": {
     "ecdsa-sig-formatter": "^1.0.5",
     "uuid": "^2.0.1"
