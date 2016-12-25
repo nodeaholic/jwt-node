@@ -1,6 +1,9 @@
 # jwt-node - JWTs for Node.js
 
-Note this project was cloned from the excelent project nJwt https://github.com/jkevlin/njwt.
+Note this project was cloned from the excelent project nJwt https://github.com/jwtk/njwt, 
+maintained by Stormpath http://www.stormpath.com.
+
+
 I have made some very small changes that allow easy creation of a key lookup.
 Key lookup example below.
 
