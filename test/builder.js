@@ -2,6 +2,7 @@ var assert = require('chai').assert;
 
 var nJwt = require('../');
 var uuid = require('uuid');
+var ObjectID = require('bson-objectid');
 
 var properties = require('../properties.json');
 
@@ -72,7 +73,7 @@ describe('create()',function(){
 
     it('should create the jti field',function(){
       var jwt = nJwt.create({},uuid());
-      assert(jwt.body.jti.match(/[a-zA-Z0-9]+[-]/));
+      assert(ObjectID.isValid(jwt.body.jti));
     });
 
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 var util = require('util');
-var uuid = require('uuid');
+var ObjectID = require('bson-objectid');
 var crypto = require('crypto');
 var ecdsaSigFormatter = require('ecdsa-sig-formatter');
 var properties = require('./properties.json');
@@ -144,7 +144,7 @@ function Jwt(claims, enforceDefaultFields){
     this.setSigningAlgorithm('none');
 
     if (!this.body.jti) {
-      this.setJti(uuid.v4());
+      this.setJti(ObjectID());
     }
 
     if (!this.body.iat) {
