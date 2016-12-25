@@ -8,8 +8,7 @@ Key lookup example below.
 [![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
 [![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
 [![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
-[![Coverage Status](https://coveralls.io/repos/jkevlin/jwt-node/badge.svg?branch=master)](https://coveralls.io/r/jkevlin/jwt-node?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
 jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
 that allows you to securely make and use JWTs in your applications without
