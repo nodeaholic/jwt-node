@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
 [![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
 
-Note this project is a fork of the excelent project nJwt https://github.com/jwtk/njwt, 
+Note this project is a fork of the excelent project https://github.com/jwtk/njwt v0.3.2, 
 maintained by Stormpath http://www.stormpath.com.
 
 
@@ -246,6 +246,9 @@ none | No digital signature or MAC value included
 
 ## Key Lookup
 
+Key lookup is accomplished by first parsing the token, looking for the 'kid' field in the header and using that value
+to find the appropriate secret.  Once found, the parsed token may be passed to the verify method.
+
 ```javascript
     var claims = {hello: 'world'}
 
@@ -264,8 +267,12 @@ none | No digital signature or MAC value included
 
     // Parse the tokent
     var jwt = new jwt-node.Parser().parse(token);
-    // lookup the key
+
+    // Lookup the Secret
+    // User supplied lookup based on jwt.header.kid
     var found = keys.find(k => k.kid === jwt.header.kid)
+
+
     // then verify
     var verifier = new jwt-node.Verifier()
       .setSigningAlgorithm('HS256')
