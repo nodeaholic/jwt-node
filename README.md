@@ -15,7 +15,7 @@ These are my imediate goals:
 
 2.  Remove 'none' as an option for the signature.
 
-3. Make the default jti to be an ObjectId.
+3. Make the default jti to be an ObjectId. (done)
 
 jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
