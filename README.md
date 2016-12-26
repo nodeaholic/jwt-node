@@ -5,9 +5,7 @@
 [![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
 [![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
 
-Note this project is a fork of the excelent project https://github.com/jwtk/njwt v0.3.2, 
-maintained by Stormpath http://www.stormpath.com.
-
+Note this project is a fork of the excelent project https://github.com/jwtk/njwt v0.3.2.
 
 These are my imediate goals:
 
