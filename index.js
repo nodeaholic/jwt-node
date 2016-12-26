@@ -144,7 +144,7 @@ function Jwt(claims, enforceDefaultFields){
     this.setSigningAlgorithm('none');
 
     if (!this.body.jti) {
-      this.setJti(ObjectID());
+      this.setJti(ObjectID().toString());
     }
 
     if (!this.body.iat) {

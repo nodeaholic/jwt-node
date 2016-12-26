@@ -1,6 +1,6 @@
 {
   "name": "jwt-node",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "JWT Library for Node.js",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "url": "https://github.com/nodeaholic/jwt-node"
   },
   "keywords": [
-    "jwt", "node", "nodejs", "js", "javascript"
+    "jwt", "node"
   ],
   "author": "NodeAholic and mostly others",
   "license": "Apache-2.0",
