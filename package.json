@@ -1,6 +1,6 @@
 {
   "name": "jwt-node",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "JWT Library for Node.js",
   "main": "index.js",
   "scripts": {

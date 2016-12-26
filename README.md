@@ -2,8 +2,8 @@
 
 [![NPM Version](https://img.shields.io/npm/v/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
 [![NPM Downloads](https://img.shields.io/npm/dm/jwt-node.svg?style=flat)](https://npmjs.org/package/jwt-node)
-[![Build Status](https://img.shields.io/travis/jkevlin/jwt-node.svg?style=flat)](https://travis-ci.org/jkevlin/jwt-node)
-[![Coverage Status](https://coveralls.io/repos/github/jkevlin/jwt-node/badge.svg)](https://coveralls.io/github/jkevlin/jwt-node)
+[![Build Status](https://img.shields.io/travis/nodeaholic/jwt-node.svg?style=flat)](https://travis-ci.org/nodeaholic/jwt-node)
+[![Coverage Status](https://coveralls.io/repos/github/nodeaholic/jwt-node/badge.svg)](https://coveralls.io/github/nodeaholic/jwt-node)
 
 Note this project is a fork of the excelent project https://github.com/jwtk/njwt v0.3.2.
 
