@@ -1,5 +1,4 @@
 var assert = require('chai').assert;
-var uuid = require('uuid');
 var ObjectID = require('bson-objectid');
 var nJwt = require('../');
 var fs = require('fs');
@@ -7,15 +6,15 @@ var path = require('path');
 
 
 function itShouldBeAValidJwt(jwt){
-  assert(nJwt.create({},uuid()) instanceof nJwt.Jwt);
+  assert(nJwt.create({},ObjectID().toString()) instanceof nJwt.Jwt);
   var nowUnix = Math.floor(new Date().getTime()/1000);
-  assert.equal(nJwt.create({},uuid()).body.iat , nowUnix);
+  assert.equal(nJwt.create({},ObjectID().toString()).body.iat , nowUnix);
   assert(ObjectID.isValid(jwt.body.jti));
 }
 
 function testHmacAlg(alg,done){
-  var key = uuid();
-  var claims = { hello: uuid(), debug: true };
+  var key = ObjectID().toString();
+  var claims = { hello: ObjectID().toString(), debug: true };
   var jwt = nJwt.create(claims,key,alg);
   var token = jwt.compact();
 
@@ -29,7 +28,7 @@ function testHmacAlg(alg,done){
 }
 
 function testKeyAlg(alg,keyPair,done){
-  var claims = { hello: uuid(), debug: true };
+  var claims = { hello: ObjectID().toString(), debug: true };
   var jwt = nJwt.create(claims,keyPair.private,alg);
   var token = jwt.compact();
 

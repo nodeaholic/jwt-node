@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/jkevlin/jwt-node",
   "dependencies": {
-    "ecdsa-sig-formatter": "^1.0.5",
-    "uuid": "^2.0.1"
+    "bson-objectid": "^1.1.4",
+    "crypto": "0.0.3",
+    "ecdsa-sig-formatter": "^1.0.5"
   },
   "devDependencies": {
     "chai": "^2.2.0",

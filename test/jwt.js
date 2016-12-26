@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var nJwt = require('../');
-var uuid = require('uuid');
+var ObjectID = require('bson-objectid');
 var properties = require('../properties.json');
 
 describe('Jwt',function() {
@@ -10,13 +10,13 @@ describe('Jwt',function() {
 
   describe('.setSubject()',function(){
     it('should set the sub claim',function(){
-      var sub = uuid();
+      var sub = ObjectID().toString();
       assert.equal(nJwt.Jwt().setSubject(sub).body.sub,sub);
     });
   });
   describe('.setIssuer()',function(){
     it('should set the iss claim',function(){
-      var iss = uuid();
+      var iss = ObjectID().toString();
       assert.equal(nJwt.Jwt().setIssuer(iss).body.iss,iss);
     });
   });
@@ -37,9 +37,9 @@ describe('Jwt',function() {
       );
     });
     it('should allow me to remove the exp field',function(){
-      var jwt = nJwt.create({},uuid());
+      var jwt = nJwt.create({},ObjectID().toString());
       var oneHourFromNow = Math.floor(new Date().getTime()/1000) + (60*60);
-      assert.equal(nJwt.create({},uuid()).body.exp , oneHourFromNow);
+      assert.equal(nJwt.create({},ObjectID().toString()).body.exp , oneHourFromNow);
       assert.equal(jwt.setExpiration().body.exp, undefined);
       assert.equal(jwt.setExpiration(false).body.exp, undefined);
       assert.equal(jwt.setExpiration(null).body.exp, undefined);
@@ -64,9 +64,9 @@ describe('Jwt',function() {
       );
     });
     it('should allow me to remove the nbf field',function(){
-      var jwt = nJwt.create({},uuid());
+      var jwt = nJwt.create({},ObjectID().toString());
       var oneHourFromNow = Math.floor(new Date().getTime()/1000) + (60*60);
-      assert.equal(nJwt.create({},uuid()).body.nbf , undefined);
+      assert.equal(nJwt.create({},ObjectID().toString()).body.nbf , undefined);
       assert.equal(jwt.setNotBefore().body.nbf, undefined);
       assert.equal(jwt.setNotBefore(false).body.nbf, undefined);
       assert.equal(jwt.setNotBefore(null).body.nbf, undefined);
@@ -101,7 +101,7 @@ describe('Jwt',function() {
   });
   describe('.toString()',function(){
     it('should return the compacted JWT string',function(){
-      var jwt = nJwt.create({},uuid());
+      var jwt = nJwt.create({},ObjectID().toString());
       assert.equal(jwt.compact(),jwt.toString());
     });
   });

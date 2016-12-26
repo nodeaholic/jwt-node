@@ -1,5 +1,4 @@
 var assert = require('chai').assert;
-var uuid = require('uuid');
 var nJwt = require('../');
 
 describe('demonstrate a key lookup on verify', function () {
