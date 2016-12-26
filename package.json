@@ -1,6 +1,6 @@
 {
   "name": "jwt-node",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "JWT Library for Node.js",
   "main": "index.js",
   "scripts": {
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkevlin/jwt-node"
+    "url": "https://github.com/nodeaholic/jwt-node"
   },
   "keywords": [
-    "jwt"
+    "jwt", "node", "nodejs", "js", "javascript"
   ],
-  "author": "Stormpath, Inc.",
+  "author": "NodeAholic and mostly others",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jkevlin/jwt-node/issues"
+    "url": "https://github.com/nodeaholic/jwt-node/issues"
   },
-  "homepage": "https://github.com/jkevlin/jwt-node",
+  "homepage": "https://github.com/nodeaholic/jwt-node",
   "dependencies": {
     "bson-objectid": "^1.1.4",
     "crypto": "0.0.3",

@@ -14,6 +14,7 @@ These are my imediate goals:
 3. Make the default jti to be an ObjectId. (done)
 4. Removed dependency on uuid. (done)
 
+
 jwt-node is the cleanest JSON Web Token (JWT) library for Node.js developers. jwt-node
 removes all the complexities around JWTs, and gives you a simple, intuitive API,
 that allows you to securely make and use JWTs in your applications without
