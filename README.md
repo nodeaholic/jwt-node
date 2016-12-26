@@ -73,6 +73,7 @@ this is not what you'll send to your end user:
 ````javascript
 console.log(jwt);
 ````
+
 ````json
 {
   "header": {
@@ -80,7 +81,7 @@ console.log(jwt);
     "alg": "HS256"
   },
   "body": {
-    "jti": "c84280e6-0021-4e69-ad76-7a3fdd3d4ede",
+    "jti": "c84280e600214e69ad767a3f",
     "iat": 1434660338,
     "exp": 1434663938,
     "nbf": 1434663938,
@@ -102,6 +103,7 @@ around in browsers without any unexpected formatting applied to it.
 var token = jwt.compact();
 console.log(token);
 ````
+
 ````
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE0MzQ0Nzk4ODN9.HQyx15jWm1upqsrKSf89X_iP0sg7N46a9pqBVGPMYdiqZeuU_ZZOdU-zizHJoIHMIJxtEWzpSMaVubJW0AJsTqjqQf6GoJ4cmFAfmfUFXmMC4Xv5oc4UqvGizpoLjfZedd834PcwbS-WskZcL4pVNmBIGRtDXkoU1j2X1P5M_sNJ9lYZ5vITyqe4MYJovQzNdQziUNhcMI5wkXncV7XzGInBeQsPquASWVG4gb3Y--k1P3xWA4Df3rKeEQBbInDKXczvDpfIlTojx4Ch8OM8vXWWNxW-mIQrV31wRrS9XtNoig7irx8N0MzokiYKrQ8WP_ezPicHvVPIHhz-InOw
 ````
@@ -115,7 +117,7 @@ authentication, you will need to use the same signing key for verification.
 The Buffer needs to be converted to a string so that it can be persisted in a
 database, and you can do so like this:
 
-```
+```javascript
 var base64SigningKey = signingKey.toString('base64');
 ```
 
@@ -138,6 +140,7 @@ This library does the following checks when you call the `verify` method:
 
 To verify a previously issued token, use the `verify` method.  You must give it
 the same signing key that you are using to create tokens:
+
 ````javascript
 jwt-node.verify(token,signingKey,function(err,verifiedJwt){
   if(err){
@@ -170,6 +173,7 @@ by passing it as a third argument to the `create` or `verify` methods:
 ````javascript
 var jwt = jwt-node.create(claims,signingKey,'HS512');
 ````
+
 ````javascript
 jwt-node.verify(token,signingKey, 'HS512');
 ````
@@ -193,7 +197,8 @@ var claims = {
   scope: 'admins'
 }
 var jwt = jwt-node.create(claims,secret);
-````
+```
+
 ```javascript
 var jwt = jwt-node.create({},secret);
 jwt.body.scope = 'admins';
