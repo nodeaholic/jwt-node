@@ -413,6 +413,7 @@ Verifier.prototype.verify = function verify(jwtString,cb){
 var jwtLib = {
   Jwt: Jwt,
   JwtBody: JwtBody,
+  nowEpochSeconds: nowEpochSeconds,
   JwtHeader: JwtHeader,
   Parser: Parser,
   Verifier: Verifier,
