@@ -170,6 +170,7 @@ Jwt.prototype.setIssuedAt = function setIssuedAt(iat) {
   this.body.iat = iat;
   return this;
 };
+// setExpiration wants a timestamp in miliseconds
 Jwt.prototype.setExpiration = function setExpiration(exp) {
   if(exp){
     this.body.exp = Math.floor((exp instanceof Date ? exp : new Date(exp)).getTime() / 1000);
@@ -255,11 +256,11 @@ Jwt.prototype.toString = function(){
 };
 
 Jwt.prototype.isExpired = function() {
-  return new Date(this.body.exp*1000) < new Date();
+  return new Date(this.body.exp) < nowEpochSeconds();
 };
 
 Jwt.prototype.isNotBefore = function() {
-  return new Date(this.body.nbf * 1000) >= new Date();
+  return new Date(this.body.nbf) >= nowEpochSeconds();
 };
 
 function Parser(options){
